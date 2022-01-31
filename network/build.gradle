@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'kotlin-kapt'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation project(':domain')
+
+    implementation koin.koin_kotlin
+    api retrofit.values()
+    api moshi.values()
+    kapt moshi_kapt.values()
+}
