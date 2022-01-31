@@ -2,22 +2,25 @@ package com.codingchallenge
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.codingchallenge.usecases.GetLessonsUseCase
+import com.example.domain.entity.Lesson
 import com.example.domain.repository.LessonsRepository
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class MainActivityViewModel(
-    private val lessonsRepository: LessonsRepository
+    private val getLessonsUseCase: GetLessonsUseCase
 ): ViewModel() {
 
+    val lessons = MutableStateFlow<List<Lesson>?>(null)
+
     init {
-        launch()
+        viewModelScope.launch {
+            lessons.value = getLessonsUseCase.invoke().lessons
+        }
     }
 
-    fun launch() {
-        viewModelScope.launch {
-            val lessons = lessonsRepository.getLessons()
-            var t = 9
-            t = 2
-        }
+    init {
+
     }
 }
