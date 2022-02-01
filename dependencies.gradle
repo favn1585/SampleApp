@@ -5,6 +5,7 @@ ext {
     def koin_version = '3.1.5'
     def retrofit_version = '2.9.0'
     def moshi_version = '1.12.0'
+    def room_version = "2.4.1"
 
     koin = [
             koin_android:   "io.insert-koin:koin-android:$koin_version",
@@ -23,5 +24,13 @@ ext {
 
     moshi_kapt = [
             moshiKapt:      "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    ]
+
+    room = [
+            room:           "androidx.room:room-runtime:$room_version",
+    ]
+
+    room_kapt = [
+            moshiKapt:      "androidx.room:room-rxjava2:$room_version"
     ]
 }

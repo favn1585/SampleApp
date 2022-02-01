@@ -21,17 +21,5 @@ class MainActivity : AppCompatActivity() {
             binding = it
             setContentView(it.root)
         }
-
-        setupGraph()
-    }
-
-    private fun setupGraph() {
-       /* supportFragmentManager.beginTransaction()
-            .replace(
-                R.id.nav_host,
-                NavHostFragment.create(R.navigation.navigation_graph),
-                NavHostFragment::class.TAG
-            )
-            .commitNowAllowingStateLoss()*/
     }
 }

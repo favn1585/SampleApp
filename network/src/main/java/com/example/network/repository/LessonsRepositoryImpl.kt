@@ -28,7 +28,7 @@ private fun LessonDto.toLesson() = Lesson(
     content = this.content.map {
         it.toContent()
     },
-    input = this.input?.toInput()
+    this.input?.toInput()
 )
 
 private fun ContentDto.toContent() = Content(
