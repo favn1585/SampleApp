@@ -2,6 +2,7 @@ package com.codingchallenge.app
 
 import android.app.Application
 import com.codingchallenge.di.appModule
+import com.example.local.di.localStorageModule
 import com.example.network.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -14,7 +15,7 @@ class MyApp: Application() {
         startKoin{
             androidLogger(Level.ERROR)
             androidContext(this@MyApp)
-            modules(networkModule + appModule)
+            modules(localStorageModule + networkModule + appModule)
         }
     }
 }

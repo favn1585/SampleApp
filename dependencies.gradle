@@ -23,14 +23,15 @@ ext {
     ]
 
     moshi_kapt = [
-            moshiKapt:      "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+            moshi_kapt:      "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
     ]
 
     room = [
             room:           "androidx.room:room-runtime:$room_version",
+            roomKtx:        "androidx.room:room-ktx:$room_version"
     ]
 
     room_kapt = [
-            moshiKapt:      "androidx.room:room-rxjava2:$room_version"
+            room_kapt:      "androidx.room:room-compiler:$room_version"
     ]
 }
